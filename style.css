@@ -1,0 +1,316 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, input, select {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, .sidebar {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*==========================================
+                    General
+===========================================*/
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #bbb;
+    font-size: 14px;
+}
+
+p {
+    margin-bottom: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+select, input {
+    height: 40px;
+    border-radius: 8px 8px 3px 3px;
+    outline: none;
+    padding: auto 3em;
+    background-color: transparent;
+    color: #bbb;
+    border: 1px solid #555;
+}
+
+/*==========================================
+                    Grid
+===========================================*/
+
+@media only screen and (min-width: 600px) {
+/*------------- For tablets: ------------*/
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+    }
+    .header, .footer {
+        grid-column: span 8;
+    }
+    .sidebar {
+        grid-column: span 2;
+    }
+    .main {
+        grid-column: span 6;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+/* ------------For desktop:------------- */
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+    .header, .footer {
+        grid-column: span 12;
+    }
+    .sidebar {
+        grid-column: span 3;
+    }
+    .main {
+        grid-column: span 9;
+    }
+}
+
+.grid-item {
+    text-align: center;
+    padding: 2em;
+}
+
+
+/*==========================================
+                    Flex
+===========================================*/
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/*==========================================
+                    Seat
+===========================================*/
+
+.seat {
+    width: 25px;
+    height: 20px;
+    border: .5px dashed #eee;
+    border-radius: 6px 6px 0 0;
+}
+
+.seat-box .seat {
+    cursor: pointer;
+}
+
+.seat.taken {
+    background-color: #222;
+    border: none;
+}
+
+.selected {
+    background-color: rgb(38, 131, 38);
+    border: none;
+}
+
+
+/*==========================================
+                    Header
+===========================================*/
+
+.header {
+    background-color: #fff;
+    max-height: 40px;
+    display: flex;
+    column-gap: 15px;
+    -moz-column-gap: 15px;
+    align-items: center;
+
+}
+
+.nav > ul {
+    display: flex;
+    justify-content: space-around;
+    column-gap: 5px;
+    -moz-column-gap: 5px;
+}
+
+.nav a {
+    display: block;
+    padding: 1em 0.5em;
+    color: #000;
+    font-variant: small-caps;
+}
+.nav a:hover {
+    color: #666;
+}
+
+
+/*==========================================
+                    Main
+===========================================*/
+
+.main {
+    background-color: #333
+}
+
+.main section {
+    margin: 2em auto;
+    perspective: 1500px;
+}
+
+@media only screen and (min-width: 600px) {
+    /*--- For tablets and desktops: -----*/
+    .main section {
+        width: 300px;
+    }
+}
+
+.screen {
+    width: 100%;
+    min-height: 120px;
+    background-color: #fff;
+    box-shadow: 0 3px 10px #fff;
+    rotate: 5px;
+    transform: rotateX(-58deg);
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+    column-gap: 5px;
+    margin: 10px 0;
+}
+
+.cart {
+    margin: 20px 0 0;
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    -moz-column-gap: 10px;
+}
+
+.cart span {
+    color: #fff;
+    margin: 0 2px;
+}
+
+button.purchase {
+    width: 100%;
+    padding: 1em;
+    margin: 10px 0 0 0;
+    cursor: pointer;
+}
+
+/* movie select */
+.main select {
+    width: 100%;
+    background-color: #333;
+    color: #bbb;
+    padding: 0 1em;
+}
+
+.main > section:first-child {
+    display: grid;
+    gap: 15px 10px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.main > section:first-child select {
+    grid-column: span 2;
+}
+
+
+/*==========================================
+                    Sidebar
+===========================================*/
+
+.sidebar {
+    background-color: rgb(236, 236, 236);
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    -moz-row-gap: 5px;
+}
+
+.banner img {
+    margin: 0 0 10px;
+    width: 100%;
+}
+
+.banner p {
+    text-align: initial;
+    color: #444;
+}
+
+p::first-word {
+    font-weight: bold;
+}
+
+.sidebar .price {
+    color: black;
+    font-weight: bold;
+}
+
+.casts {
+    display: flex;
+    overflow: scroll;
+    cursor: pointer;
+    font-size: 10px;
+
+}
+
+.casts img {
+    border-radius: 10px;
+    width: 70px;
+    margin-right: 5px;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/assets/imgs/favicon.png">
+
+    <title>Seat Selector</title>
+
+    <meta property="og:title" content="Seat Selector" />
+    <meta property="og:description" content="A responsive mobile-first page for booking a movie seat online" />
+    <meta property="og:image" content="" />
+    <meta property="og:type" content="website" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+<div class="grid-container">
+    <header class="grid-item header">
+        <h1>Seat Selector</h1>
+        <nav class="nav">
+          <ul>
+            <li><a href="#">home</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">contact</a></li>
+          </ul>
+        </nav>
+    </header>
+    <main class="grid-item main">
+        <section>
+            <select id="movie" class="flex-item">
+                <option selected disabled>Select...</option>
+                <option>The Shawshank Redemption</option>
+                <option>Forest Gump</option>
+                <option>Good Bye Lenin</option>
+                <option>Dreamer</option>
+                <option>Invention of Lying</option>
+            </select>
+            <input type="date">
+            <input type="time">
+        </section>
+        <section class="guide flex-container">
+            <div class="flex-container"><div class="seat taken"></div>Occupied</div>
+            <div class="flex-container"><div class="seat available"></div>Available</div>
+            <div class="flex-container"><div class="seat selected"></div>Selected</div>
+        </section>
+        <section>
+            <div class="screen"></div>
+            <div class="seat-box">
+              <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+              </div>
+              <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+              </div>
+              <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+              </div>
+              <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+              </div>
+              <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+              </div>
+            </div>
+            <div class="cart">
+              <p>Selected Seats:<span id="count">0</span></p>
+              <p>Price:<span id="totalPrice">0</span></p>
+            </div>
+            <button class="purchase" onclick="purchse()">Purchase</button>
+            <button class="purchase" onclick="clearStorage()">Reset</button>
+      </section>
+    </main>
+    <sidebar class="grid-item sidebar">
+        <section class="banner">
+          <img class="movieImg">
+          <p class="movieSummary"></p>
+          <p class= director></p>
+          <p class="price"></p>
+        </section>
+        <!-- <h3>Casts</h3>
+        <section class="casts">
+          <figure><img src="assets/imgs/morgan-freeman.jpg" alt="morgan freeman"><figcaption>Morgan Freeman</figcaption></figure>
+          <figure><img src="assets/imgs/tim-robins.jpg" alt="Tim Robbins"><figcaption>Tim Robbins</figcaption></figure>
+          <figure><img src="assets/imgs/clancy brown.jpg" alt="Clancy Brown"><figcaption>Clancy Brown</figcaption></figure>
+          <figure><img src="assets/imgs/bob-gunton.jpg" alt="Bob Gunton"><figcaption>Bob Gunton</figcaption></figure>
+        </section> -->
+    </sidebar>
+    <footer class="grid-item footer">Footer</footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
